@@ -11,14 +11,16 @@ class Student:
         return f'Name :{self.first_name}\nStream:{self.stream}\n\n'
 
 
-def store_data(student):
-    db = shelve.open('../Database/class_student_shelve')
-    db[student.first_name] = student
+def store_data(student_in):
+    # db = shelve.open('../Database/class_student_shelve')
+    db = shelve.open('Database/class_student_shelve')
+    db[student_in.first_name] = student_in
     db.close()
 
 
 def display_data():
-    db = shelve.open('../Database/class_student_shelve')
+    # db = shelve.open('../Database/class_student_shelve')
+    db = shelve.open('Database/class_student_shelve')
     for key in db:
         print(db[key])
 

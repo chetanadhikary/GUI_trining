@@ -18,6 +18,11 @@ def store_data(student_in):
     db.close()
 
 
+def fetch_record(fname):
+    db = shelve.open('Database/class_student_shelve')
+    return db[fname]
+
+
 def display_data():
     # db = shelve.open('../Database/class_student_shelve')
     db = shelve.open('Database/class_student_shelve')
